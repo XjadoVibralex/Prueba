@@ -25,13 +25,13 @@ function ponerFicha(event){
         }
 
         if(estadoPartida == 1){
-            textoGanador.style.visibility = "visible";
-            finPartida= true;
+            textoVictoria.style.visibility = "visible";
+            partidaAcabada= true;
         }
         else if(estadoPartida== -1){
-            textoGanador.innerHTML="Perdiste";
-            finPartida=true;
-            textoGanador.style.visibility = "visible";
+            textoVictoria.innerHTML="Perdiste";
+            partidaAcabada=true;
+            textoVictoria.style.visibility = "visible";
         }
 
     } 
@@ -54,7 +54,7 @@ function estado(){
     function sonIguales(...args){
         valores = args.map(x=>x.innerHTML);
         if(valores[0]!="" && valores.every((x,i,arr)=>x===arr[0])){
-            args.forEach(x => x.style.backgroundColor = "Fuchsia");
+            args.forEach(x => x.style.backgroundColor = "Fuchsia")
             return true;
         }else{
             return false;
