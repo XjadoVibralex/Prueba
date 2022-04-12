@@ -3,13 +3,13 @@ let fichas = ["O","X"];
 let puestas =0;
 let partidaAcabada= false;
 let textoVictoria = document.getElementById("textoVictoria");
-let botones = Array.from(document.getElementsByTagName("button"));
+let botones = Array.from(document.getElementsByTagName("button"));//devuelve una estructura de datos de determionado elemento en este caso button
 
 botones.forEach(x => x.addEventListener("click",ponerFicha));
 
 function ponerFicha(event){
     let botonPulsado = event.target;
-    if(!partidaAcabada && botonPulsado.innerHTML ==""){
+    if(!partidaAcabada && botonPulsado.innerHTML ==""){//comprueba la negacion del estado de partida acabada y que el estado inicial de boton pulsado
         botonPulsado.innerHTML = fichas[turno];
         puestas +=1;
 
@@ -60,7 +60,7 @@ function estado(){
             return false;
         }
     }
-    //ver si hay lineas de victoria
+    //ver si hay lineas de victoria las cuales son los 8 estados posibles
     if(sonIguales(botones[0],botones[1],botones[2])){
         posicionVictoria =1;
     }else if(sonIguales(botones[3],botones[4],botones[5])){
