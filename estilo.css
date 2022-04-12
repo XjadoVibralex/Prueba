@@ -1,6 +1,6 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: lightslategray;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -21,6 +21,7 @@ h2{
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
+   
 }
 
 #tablero>button{
@@ -28,6 +29,7 @@ h2{
     height: 250px;
     max-width: 33.33%;
     font-size: 10em;
+    color: darkslategray;
 }
 
 #victoria{

@@ -13,7 +13,7 @@ function ponerFicha(event){
         botonPulsado.innerHTML = fichas[turno];
         puestas +=1;
 
-        let estadoPartida = estado();
+        let estadoPartida = estado();//devuelve 0 si nadie gana 1 si gana el usuario y -1 si gana la maquina
         if(estadoPartida == 0){
             cambiarTurno();
             if(puestas < 9){
@@ -54,13 +54,13 @@ function estado(){
     function sonIguales(...args){
         valores = args.map(x=>x.innerHTML);
         if(valores[0]!="" && valores.every((x,i,arr)=>x===arr[0])){
-            args.forEach(x => x.style.backgroundColor = "Fuchsia")
+            args.forEach(x => x.style.backgroundColor = "Green")
             return true;
         }else{
             return false;
         }
     }
-    //ver si hay lineas de victoria las cuales son los 8 estados posibles
+    //ver si hay lineas de victoria las cuales son los 8 estados posibles por medio de las 3 copincidencia dependiendo de doonde ocurrio la victoria 
     if(sonIguales(botones[0],botones[1],botones[2])){
         posicionVictoria =1;
     }else if(sonIguales(botones[3],botones[4],botones[5])){
