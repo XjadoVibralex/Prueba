@@ -1,15 +1,15 @@
 let turno = 1;
 let fichas = ["O","X"];
 let puestas =0;
-let textoGanador = document.getElementById("victoria");
-let finPartida = false;
+let partidaAcabada= false;
+let textoVictoria = document.getElementById("textoVictoria");
 let botones = Array.from(document.getElementsByTagName("button"));
 
 botones.forEach(x => x.addEventListener("click",ponerFicha));
 
 function ponerFicha(event){
     let botonPulsado = event.target;
-    if(!finPartida && botonPulsado.innerHTML ==""){
+    if(!partidaAcabada && botonPulsado.innerHTML ==""){
         botonPulsado.innerHTML = fichas[turno];
         puestas +=1;
 
